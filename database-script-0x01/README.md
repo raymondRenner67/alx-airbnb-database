@@ -1,0 +1,6 @@
+Database Schema Script - airbnb_cloneThis directory contains the SQL script (schema.sql) necessary to set up the database structure for the Airbnb Clone project.The schema defines tables for Users, Properties, Bookings, Payments, Reviews, and Messages, ensuring data integrity through Primary Keys, Foreign Keys, and custom constraints.PrerequisitesYou must have access to a SQL database environment (e.g., MySQL, PostgreSQL, or SQLite with extensions) where you have permission to create databases and tables.ExecutionCreate the Database:CREATE DATABASE airbnb_clone_db;
+\c airbnb_clone_db; -- For PostgreSQL
+-- USE airbnb_clone_db; -- For MySQL
+Run the Schema Script:Execute the schema.sql file using your database client.Example using psql (PostgreSQL):psql -d airbnb_clone_db -f schema.sql
+Example using MySQL client:mysql -u [username] -p airbnb_clone_db < schema.sql
+The script will:Define ENUM types for roles, statuses, and payment methods.Create all six core tables.Define Primary Keys and Foreign Keys.Add indexes to frequently queried columns for performance.
