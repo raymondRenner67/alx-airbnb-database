@@ -32,7 +32,9 @@ SELECT
 FROM Booking b
 JOIN "User" u ON b.user_id = u.user_id
 JOIN Property p ON b.property_id = p.property_id
-JOIN Payment pay ON b.booking_id = pay.booking_id;
+JOIN Payment pay ON b.booking_id = pay.booking_id
+WHERE b.status = 'confirmed'
+AND pay.amount > 0;
 
 -- =========================================================
 -- 2️⃣ IDENTIFIED ISSUES:
@@ -65,6 +67,7 @@ JOIN "User" u ON b.user_id = u.user_id
 JOIN Property p ON b.property_id = p.property_id
 LEFT JOIN Payment pay ON b.booking_id = pay.booking_id
 WHERE b.start_date >= NOW() - INTERVAL '6 months'
+AND b.status = 'confirmed'
 ORDER BY b.start_date DESC;
 
 -- =========================================================
