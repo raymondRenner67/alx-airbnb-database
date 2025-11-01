@@ -26,7 +26,9 @@ SELECT
     r.created_at AS review_date
 FROM Property AS p
 LEFT JOIN Review AS r
-    ON p.property_id = r.property_id;
+    ON p.property_id = r.property_id
+ORDER BY p.property_id;
+
 
 -- outer join PostgreSQL.
 SELECT 

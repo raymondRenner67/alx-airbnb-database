@@ -1,11 +1,5 @@
-# 🧩 – Airbnb Clone Database
+# 🧩 SQL Joins Practice – Airbnb Clone Database
 
-
-
-
-- **INNER JOIN**
-- **LEFT JOIN**
-- **FULL OUTER JOIN**
 
 ---
 
@@ -70,7 +64,8 @@ SELECT
     r.created_at AS review_date
 FROM Property AS p
 LEFT JOIN Review AS r
-    ON p.property_id = r.property_id;
+    ON p.property_id = r.property_id
+ORDER BY p.property_id;
 ```
 
 ### **Result Example**
@@ -83,7 +78,8 @@ LEFT JOIN Review AS r
 
 ✅ **Explanation:**  
 All properties appear in the result.  
-If a property has no reviews, review fields are shown as `NULL`.
+If a property has no reviews, review fields are shown as `NULL`.  
+Results are sorted by property for consistency.
 
 ---
 
@@ -168,7 +164,7 @@ RIGHT JOIN Booking AS b
 ## 🧠 Key Takeaways
 
 - **INNER JOIN** filters down to common data only.  
-- **LEFT JOIN** preserves all left-side records.  
+- **LEFT JOIN** preserves all left-side records and sorts results deterministically.  
 - **FULL OUTER JOIN** gives the complete dataset — perfect for comprehensive audits.  
 
 ---
